@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Task1.Entities;
+namespace Task1.Sql.Entities;
 
 [Table("Task1")]
 public class Task1Entity

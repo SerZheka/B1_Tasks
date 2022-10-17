@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using Task1.Entities;
+using Task1.Sql.Entities;
 
-namespace Task1;
+namespace Task1.Sql;
 
 public class Task1Context : DbContext
 {
