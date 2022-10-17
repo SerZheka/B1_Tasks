@@ -1,0 +1,24 @@
+@model IEnumerable<Task2.Contracts.Models.ExcelFile>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h3>Добавить файл</h3>
+        <form method="post" enctype="multipart/form-data" asp-action="Upload">
+            <input type="file" name="file"/><br/>
+            <input type="submit" value="Upload"/>
+        </form>
+
+        @foreach (var file in Model)
+        {
+            @Html.ActionLink($"Просмотреть {file.FileName}", "FileDetails", new { file.FileId, file.FileName })
+            <br/>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+@model IEnumerable<Task2.Contracts.Models.BalanceAccount>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>File details</title>
+</head>
+<body>
+    <div>
+        <h2>Информация по файлу @ViewBag.FileName</h2>
+        <table>
+            <thead>
+            <tr>
+                <td rowspan="2">Б/сч</td>
+                <td colspan="2">Входящее сальдо</td>
+                <td colspan="2">Обороты</td>
+                <td colspan="2">Исходящее сальдо</td>
+            </tr>
+            <tr>
+                <td>Актив</td>
+                <td>Пассив</td>
+                <td>Актив</td>
+                <td>Пассив</td>
+                <td>Актив</td>
+                <td>Пассив</td>
+            </tr>
+
+            </thead>
+            <tbody>
+            @foreach (var account in Model)
+            {
+                <tr>
+                    <td>@account.BalanceAccountId</td>
+                    <td>@account.IncomingBalanceAsset</td>
+                    <td>@account.IncomingBalanceLiability</td>
+                    <td>@account.TurnoverAsset</td>
+                    <td>@account.TurnoverLiability</td>
+                    <td>@account.OutgoingBalanceAsset</td>
+                    <td>@account.OutgoingBalanceLiability</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
